@@ -1,0 +1,120 @@
+MAIN
+
+Data: Switch statements
+Functionality: Provide a first menu to allow the user to upload a new image,
+display the current image, edit the image, or exit the program.
+Algorithm:
+Get image
+Repeat until exit
+Display menu options
+If the user wants to change the image
+Let the user upload a new image
+If the user wants to display the current image
+Display the image
+If the user wants to edit the image
+Go to edit options
+If the user wants to exit the program
+Quit
+
+New Function 
+
+
+Functionality: Allows the user to upload a new image to replace the current one.
+Algorithm: Replace old image with new image
+
+
+display()
+Functionality: Displays the current image.
+Algorithm:
+Display input image
+
+
+display()
+Functionality: Displays the current image.
+Algorithm:
+Display input image.
+editMenu()
+Data: Switch statements
+Functionality: Brings the user to a second menu to edit the image. The menu will
+allow the image to be cropped, dimmed, brightened, or rotated.
+Algorithm:
+Repeat until exiting
+Display menu
+If user wants to crop
+Go to the cropping option
+If the user wants to darken the image
+Go to the dim option
+If the user wants to brighten the image
+Go to the brighten option
+If the user wants to rotate the image
+Go to the rotate option
+If the user wants to quit
+Save it
+\
+
+crop()
+Functionality: Allows the user to take chunks off of the image (crop it).
+Algorithm:
+Repeat until exiting option
+Display the image
+Let the user remove parts of the image
+Save it
+
+
+dim()
+Data: Switch statements (space, period)
+Functionality: Allows the user to make the image darker.
+Algorithm:
+Repeat until exiting option
+Display the image
+Let the user choose which dark value they want
+Save the image
+
+
+brighten()
+Data: Switch statements (O, 0)
+Functionality: Allows the user to make the image brighter.
+Algorithm:
+Repeat until exiting option
+Display the image
+Let the user choose which brightness value they want
+Save the image
+
+
+rotate()
+Functionality: Allows the user to “rotate” the image 90 degrees.
+Algorithm:
+Repeat until exiting option
+Display the image
+Let the user choose how many times to make the pixels move
+Save the image
+
+
+save()
+Data: String
+Functionality: Allow the user to save the edits on their image by letting them
+name the file. After, return to the main menu.
+Algorithm:
+Ask the user to name the image
+Get the name
+If there is no name or no valid name, repeat until given a valid name
+If there is a valid name, save the image
+Return to first menu
+
+
+Rotate Function
+Create 2D array to rotate the image, swapping the size of the image (height & width)’
+Used swapped data to present the new image
+Update previous image with the rotated one
+
+
+
+
+
+
+
+
+
+
+
+

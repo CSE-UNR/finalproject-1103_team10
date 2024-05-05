@@ -1,0 +1,35 @@
+Display current image
+Edit image 
+Exit Program
+Use Switch statement to call the corresponding function 
+Give the option to save the edited image to a file 
+Repeat until user decides to exit the program
+
+
+Load Function 
+Open File for the reading 
+Read the height & width
+Close File
+
+Display Function
+Loop through the 2D array for the image
+Print characters corresponding to brightness levels
+
+
+Edit Function
+Add the ability to dim & brighten image 
+
+Save Function
+Open file for writing 
+Write height & width
+Close file
+
+Crop Function
+Prompt user to edit the length and width of image
+Save the new data and return it 
+
+Rotate Function
+Create 2D array to rotate the image, swapping the size of the image (height & width)’
+Used swapped data to present the new image
+Update previous image with the rotated one
+
