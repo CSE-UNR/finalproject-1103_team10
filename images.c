@@ -5,8 +5,10 @@
 #include <stdio.h>
 
 #define SIZE 100
+#define ROW 12
+#define COL 21
 
-int load(char name[]);
+int load(char name[], char array[][COL]);
 void display(char name[]);
 void editMenu();
 void crop();
@@ -18,6 +20,7 @@ int main(){
 
 int input;
 char name[SIZE];
+char array[ROW][COL];
 
 //menu 1
 	do{
@@ -34,7 +37,7 @@ char name[SIZE];
 	
 	switch(input){
 	case 1:
-		load(name);
+		load(name, array);
 	break;
 	case 2:
 		display(name);
@@ -58,7 +61,7 @@ char name[SIZE];
 return 0;
 }
 
-int load(char name[]){
+int load(char name[], char array[][COL]){
 	
  
 	printf("\n");
@@ -75,10 +78,18 @@ int load(char name[]){
 	}else{
 	printf("\n");
 	printf("Image successfully loaded! \n");
-	fclose(fileIn);
-	return 1;
+	}
+	for(int i = 0; i < ROW; i++){
+		if(fgets(array[i], COL + 1, fileIn) == NULL){
+			printf("Could not find an image with that filename. \n");
+			fclose(fileIn);
+			return 0;	
+			}
+			}
+		fclose(fileIn);
+		return 1;
 }
-}
+
 
 void display(char name[]){
 	char image[SIZE];
@@ -162,4 +173,3 @@ void save(){
 	printf("image \n");
 	printf("Would you like to save the file? (y/n)");
 }
-
