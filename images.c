@@ -14,7 +14,7 @@ void editMenu();
 void crop();
 void dimBright();
 void rotate();
-void save();
+int save(char array[][COL]);
 
 int main(){
 
@@ -121,6 +121,7 @@ void display(char name[]){
 //menu 2
 void editMenu (){
 int input;
+char array[ROW][COL];
 
 	do{
 	printf("\n");
@@ -148,7 +149,7 @@ int input;
 	rotate();
 	break;
 	case 0: 
-	save();
+	save(array);
 	break;
 	default:
 		printf("\n");
@@ -169,7 +170,37 @@ void dimBright(){
 void rotate(){
 	printf("rotate \n");
 }
-void save(){
-	printf("image \n");
-	printf("Would you like to save the file? (y/n)");
+int save(char array[][COL]){
+	char input;
+	char name[SIZE];
+	
+	//vv needs fixed
+	display(name);
+	//^^
+	printf("\n");
+	
+	printf("Would you like to save the file? (y/n) ");
+	scanf(" %c", &input);
+	
+	switch(input){
+	case 'y':
+	case 'Y':
+		printf("What is the name of the image file? ");
+		scanf("%s", name);
+		FILE *fileIn = fopen(name, "w");
+		if(fileIn == NULL){
+			printf("Could not find the filename. \n");
+			return 0;
+			}else{
+			printf("\n");
+			printf("Image successfully loaded! \n");
+		}
+		for(int r = 0; r < ROW; r++){
+			fprintf(fileIn, "%s\n", array[r]);
+			}
+			fclose(fileIn);
+	default:
+		return 0;
+	break;
+}
 }
